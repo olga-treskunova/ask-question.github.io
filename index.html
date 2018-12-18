@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8"  />
+    <title>Получи ответ на свой вопрос</title>
+    <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        //Скрыть PopUp при загрузке страницы
+        PopUpHide();
+      });
+      //Функция отображения PopUp
+      function PopUpShow(){
+        $("#popup1").show();
+      }
+      //Функция скрытия PopUp
+      function PopUpHide(){
+        $("#popup1").hide();
+        document.getElementById("txt1").value = "";
+      }
+
+    </script>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body>
+    <form class="contact_form" name="contact_form">
+      <ul>
+        <li>
+          <label for="question">Задайте свой вопрос и получите ответ: ДА или НЕТ</label>
+        <li>
+          <textarea id = "txt1" name="question" cols="40" rows="6" required></textarea>
+        </li>
+        <li>
+          <a id="link" href="javascript:PopUpShow()">Ответ</a>
+        </li>
+      </ul>
+    </form>
+
+    <div class="popup" id="popup1">
+      <div class="popup-content">
+          <div class="quotes">Да</div>
+          <div class="quotes">Пожалуй, стоит подумать еще</div>
+          <div class="quotes">Нет</div>
+          <div class="quotes">Скорее всего, да</div>
+          <div class="quotes">Конечно, да</div>
+          <div class="quotes">Да, возможно</div>
+          <div class="quotes">Очень вероятно</div>
+          <div class="quotes">Спросите позже</div>
+          <div class="quotes">Спросите снова </div>
+          <div class="quotes">Вряд ли</div>
+          <div class="quotes">Никаких сомнений</div>
+          <div class="quotes">Бесспорно</div>
+          <div class="quotes">Весьма сомнительно</div>
+          <div class="quotes">Точно нет</div>
+          <div class="quotes">Однозначно</div>
+          <div class="quotes">Плохая перспектива</div>
+          <div class="quotes">Не стоит</div>
+          <div class="quotes">Да, да, да!</div>
+          <div class="quotes">О, нет</div>
+          <div class="quotes">Сложно ответить...</div>
+          <div class="quotes">Не стоит рассчитывать</div>
+
+          <p>
+            <a id="link" href="javascript:PopUpHide()">Все ясно</a>
+          </p>
+      </div>
+
+      </div>
+        <script type="text/javascript">
+
+        number = document.getElementsByClassName('quotes');
+
+        var randomquote = [];
+        for (i=0; i<=number.length; i++)  {
+        randomquote[i] = document.getElementsByClassName('quotes')[i];
+          randomquote.push(randomquote[i]);
+                            }
+        function randomzero (n)
+          {
+        return ( Math.floor ( Math.random ( )*0.9999999999999999* (n + 1)) );
+          }
+
+        var number1 = number.length-1;
+
+        x = randomzero(number1);
+
+        randomquote[x].style.display = 'block';
+
+
+
+        </script>
+
+        </div>
+    </body>
+</html>
